@@ -19,20 +19,7 @@
 
   function getDocumentHeight() {
     var D = document;
-
-    var matches = navigator.userAgent.match(/MSIE (\d)/);
-    if (matches && parseInt(matches[1], 10) <=10) {
-
-      return Math.max(D.body.scrollHeight, D.documentElement.scrollHeight);
-    }
-
-    return Math.min(
-      Math.max(D.body.offsetHeight, D.documentElement.offsetHeight),
-      Math.max(
-        Math.max(D.body.scrollHeight, D.documentElement.scrollHeight),
-        Math.max(D.body.clientHeight, D.documentElement.clientHeight)
-      )
-    );
+    return Math.max(D.body.scrollHeight, D.documentElement.scrollHeight);
   }
 
   function postHeight(height) {
